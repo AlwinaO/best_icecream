@@ -1,5 +1,11 @@
 require "best_icecream/version"
 
 module BestIcecream
-  # Your code goes here...
+
+  class Icecream
+    def ice_cream
+      `say good`
+    end
+
+  end
 end
