@@ -12,7 +12,10 @@ class BestIcecream::CLI
 
   def list_parlors
     puts "Welcome to the World's Best Icecream Parlors!"
-    @parlors = BestIcecream::Icecream.parlors
+    @parlors = BestIcecream::Icecream.parlor
+    @parlors.each.with_index(1) do |parlor, i|
+      puts "#{i}. #{parlor.name} - #{parlor.location} - #{parlor.url}"
+    end
 
   end
 
@@ -20,14 +23,12 @@ class BestIcecream::CLI
     input = nil
     while input != "exit"
       puts "Enter the number of the parlor you would like more information on, type list to see the list of parlors or type exit:"
-
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "More info on parlor 1..."
-      when "2"
-        puts "More info on parlor 2..."
-      when "list"
+
+      if input.to_i > 0
+        the_parlor = @parlors[input.to_i-1]
+        puts "#{the_parlor.name} - #{the_parlor.location} - #{the_parlor.url} - #{the_parlor.description}"
+      elsif input == "list"
         list_parlors
       else
         puts "Not sure what you want, please type list or exit."
