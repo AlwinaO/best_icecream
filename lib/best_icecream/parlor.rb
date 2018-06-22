@@ -17,12 +17,12 @@ class BestIcecream::Icecream
   end
 
   def self.scrape_spoon
-    doc = Nokogiri::HTML(open("https://spoonuniversity.com/place/25-of-the-most-over-the-top-ice-cream-shops-around-the-world"))
+    doc = Nokogiri::HTML(open("https://www.thrillist.com/eat/nation/best-ice-cream-shops-in-america"))
     binding.pry
     title = doc.search(".postContent h3 a").text
-    location =
+    # location =
     url = doc.search(".postContent h3 a").first.attr("href")
-    description = 
+    # description =
 
 
   end
