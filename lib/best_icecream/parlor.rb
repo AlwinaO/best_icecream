@@ -18,14 +18,17 @@ class BestIcecream::Icecream
 
   def self.scrape_spoon
     doc = Nokogiri::HTML(open("https://ny.eater.com/maps/best-new-ice-cream-shops-new-york-city"))
-    binding.pry
-    name = doc.css("div .c-mapstack__card-hed div h1").first.text
-    location = doc.css("div .c-mapstack__address").first.text
-    phone = doc.search("div .c-mapstack__ info div .c-mapstack__phone desktop-only")
-    url = url = doc.css("div a link-icon").first
-    # description =
 
-
+    parlors = doc.css(".c-mapstack__cards section.c-mapstack__card")
+      parlors = parlors.slice(1,16)
+    parlors.each do |parlor|
+      name = parlor.css("div h1").text
+      location = parlor.css("div .c-mapstack__address").text
+      phone = parlor.css("div .c-mapstack__phone a").text
+      binding.pry
+    end
+    url = parlor.css("div .c-mapstack__phone-url div a").attr("href")
+    
   end
 
 end
