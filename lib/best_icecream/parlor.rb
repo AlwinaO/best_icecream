@@ -1,5 +1,22 @@
-class BestIcecream::Icecream
-  attr_accessor :name, :location, :description, :url
+class BestIcecream::Parlor
+  attr_accessor :name, :location, :phone, :url
+
+  @@all = []
+
+  def initialize(name, location, phone, url)
+    @name = name
+    @location = location
+    @phone = phone
+    @url = url
+  end
+
+  def self.all
+    @@all
+  end
+
+  def save
+    @@all << self
+  end
 
   def self.parlor
     # return a list of best icecream parlors in the world
@@ -23,12 +40,21 @@ class BestIcecream::Icecream
       parlors = parlors.slice(1,16)
     parlors.each do |parlor|
       name = parlor.css("div h1").text
+      # handle malformed parlor cards
+      if name == ""
+        next
+      end
+      name = name[4..-1]
+      # if name[0]
       location = parlor.css("div .c-mapstack__address").text
       phone = parlor.css("div .c-mapstack__phone a").text
+      url = parlor.css("div .c-mapstack__phone-url a[target]").attr("href").value
+
+      new_parlor = BestIcecream::Parlor.new(name, location, phone, url)
+      new_parlor.save
+
+      end
       binding.pry
-    end
-    url = parlor.css("div .c-mapstack__phone-url div a").attr("href")
-    
   end
 
 end
