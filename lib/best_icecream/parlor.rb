@@ -25,7 +25,7 @@ class BestIcecream::Parlor
   end
 
   def self.scrape_parlors
-  # Go to spoonuniversity and find the parlors; extract the parlor information and instantiate a new parlor
+  # Go to ny.eater.com and find the parlors; extract the parlor information and instantiate a new parlor
     parlors = []
 
     parlors << self.scrape_spoon
@@ -39,18 +39,18 @@ class BestIcecream::Parlor
     parlors = doc.css(".c-mapstack__cards section.c-mapstack__card")
       parlors = parlors.slice(1,16)
     parlors.each do |parlor|
-      parlor.name = parlor.css("div h1").text
+      name = parlor.css("div h1").text
       # handle malformed parlor cards
-      if parlor.name == ""
+      if name == ""
         next
       end
-      parlor.name = name[4..-1]
+      name = name[4..-1]
       # if name[0]
-      parlor.location = parlor.css("div .c-mapstack__address").text
-      parlor.phone = parlor.css("div .c-mapstack__phone a").text
-      parlor.url = parlor.css("div .c-mapstack__phone-url a[target]").attr("href").value
-      end
       # binding.pry
+      location =  parlor.css("div .c-mapstack__address").text
+      phone = parlor.css("div .c-mapstack__phone a").text
+      url = parlor.css("div .c-mapstack__phone-url a[target]").attr("href").value
+      end
 
   end
 
