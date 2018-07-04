@@ -39,22 +39,19 @@ class BestIcecream::Parlor
     parlors = doc.css(".c-mapstack__cards section.c-mapstack__card")
       parlors = parlors.slice(1,16)
     parlors.each do |parlor|
-      name = parlor.css("div h1").text
+      parlor.name = parlor.css("div h1").text
       # handle malformed parlor cards
-      if name == ""
+      if parlor.name == ""
         next
       end
-      name = name[4..-1]
+      parlor.name = name[4..-1]
       # if name[0]
-      location = parlor.css("div .c-mapstack__address").text
-      phone = parlor.css("div .c-mapstack__phone a").text
-      url = parlor.css("div .c-mapstack__phone-url a[target]").attr("href").value
-
-      new_parlor = BestIcecream::Parlor.new(name, location, phone, url)
-      new_parlor.save
-
+      parlor.location = parlor.css("div .c-mapstack__address").text
+      parlor.phone = parlor.css("div .c-mapstack__phone a").text
+      parlor.url = parlor.css("div .c-mapstack__phone-url a[target]").attr("href").value
       end
-      binding.pry
+      # binding.pry
+
   end
 
 end

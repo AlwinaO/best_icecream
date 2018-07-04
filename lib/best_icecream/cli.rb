@@ -12,9 +12,9 @@ class BestIcecream::CLI
 
   def list_parlors
     puts "Welcome to the World's Best Icecream Parlors!"
-    @parlors = BestIcecream::Icecream.parlor
+    @parlors = BestIcecream::Parlor.parlor
     @parlors.each.with_index(1) do |parlor, i|
-      puts "#{i}. #{parlor.name} - #{parlor.location} - #{parlor.url}"
+      puts "#{i}. #{parlor.name} - #{parlor.location} - #{parlor.phone} - #{parlor.url}"
     end
 
   end
@@ -27,7 +27,7 @@ class BestIcecream::CLI
 
       if input.to_i > 0
         the_parlor = @parlors[input.to_i-1]
-        puts "#{the_parlor.name} - #{the_parlor.location} - #{the_parlor.url} - #{the_parlor.description}"
+        puts "#{the_parlor.name} - #{the_parlor.location} - #{the_parlor.phone} - #{the_parlor.url}"
       elsif input == "list"
         list_parlors
       else
