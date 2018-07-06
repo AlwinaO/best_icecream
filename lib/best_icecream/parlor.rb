@@ -9,7 +9,7 @@ class BestIcecream::Parlor
     @phone = phone
     @url = url
 
-    self.save 
+    self.save
   end
 
   def self.all
@@ -32,8 +32,8 @@ class BestIcecream::Parlor
 
     doc = Nokogiri::HTML(open("https://ny.eater.com/maps/best-new-ice-cream-shops-new-york-city"))
 
-    parlors = doc.css(".c-mapstack__cards section.c-mapstack__card")
-      parlors = parlors.slice(1,16)
+    parlors = doc.css(".c-mapstack__cards section.c-mapstack__card").slice(1,16)
+      #parlors = parlors.slice(1,16)
     parlors.each do |parlor|
 
       name = parlor.css("div h1").text
