@@ -1,4 +1,4 @@
-class BestIcecream::Parlor
+ class BestIcecream::Parlor
   attr_accessor :name, :location, :phone, :url
 
   @@all = []
