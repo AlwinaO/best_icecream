@@ -8,6 +8,8 @@ class BestIcecream::Parlor
     @location = location
     @phone = phone
     @url = url
+
+    self.save 
   end
 
   def self.all
@@ -25,20 +27,15 @@ class BestIcecream::Parlor
   end
 
   def self.scrape_parlors
-  # Go to ny.eater.com and find the parlors; extract the parlor information and instantiate a new parlor
-    parlors = []
+    # Go to ny.eater.com and find the parlors; extract the parlor information and instantiate parlors
 
-    parlors << self.scrape_spoon
 
-    parlors
-  end
-
-  def self.scrape_spoon
     doc = Nokogiri::HTML(open("https://ny.eater.com/maps/best-new-ice-cream-shops-new-york-city"))
 
     parlors = doc.css(".c-mapstack__cards section.c-mapstack__card")
       parlors = parlors.slice(1,16)
     parlors.each do |parlor|
+
       name = parlor.css("div h1").text
       # handle malformed parlor cards
       if name == ""
@@ -47,9 +44,12 @@ class BestIcecream::Parlor
       name = name[4..-1]
       # if name[0]
       # binding.pry
+
       location =  parlor.css("div .c-mapstack__address").text
       phone = parlor.css("div .c-mapstack__phone a").text
       url = parlor.css("div .c-mapstack__phone-url a[target]").attr("href").value
+
+      new_parlor = BestIcecream::Parlor.new(name, location, phone, url)
       end
 
   end
