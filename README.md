@@ -1,8 +1,9 @@
 # BestIcecream
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/best_icecream`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to BestIcecream gem! I created this gem to find the best ice cream in your city or around the world. There's a lot of great options for ice cream, some I've been too and others I look forward to checking out!
 
-TODO: Delete this and the text above, and describe your gem
+I hope you are looking forward to finding the best ice cream no matter where you are! Yummy!!!
+
 
 ## Installation
 
@@ -22,7 +23,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use this gem follow the installation instructions above. The original code is a base for parsing the data from any website that lists ice cream parlors. Feel free to edit according to your needs.
+
+To run the CLI, type in ./bin/best-icecream, which will give you an initial list of ice cream parlors. Type a number for more information, including the name, address, phone number and website for each ice cream parlor.
+
+When you are finished reviewing the list, type exit to exit the CLI.
+
+Here's a quick video demo:
+
+I hope you got some good ideas for ice cream parlors to check out! :)
+
 
 ## Development
 
@@ -32,7 +42,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/best_icecream. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/AlwinaO/best_icecream. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -40,4 +50,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the BestIcecream project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/best_icecream/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the BestIcecream project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/AlwinaO/best_icecream/blob/master/CODE_OF_CONDUCT.md).
