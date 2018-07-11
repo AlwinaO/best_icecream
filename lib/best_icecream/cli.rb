@@ -42,7 +42,7 @@ class BestIcecream::CLI
   end
 
   def goodbye
-    puts "See you next year for a new list of Icecream Parlors from around the World!"
+    puts "See you next year for a new list of Icecream Parlors in NYC!"
   end
 
 end
