@@ -4,7 +4,7 @@ class BestIcecream::CLI
 
   def call
 
-    BestIcecream::Parlor.scrape_parlors
+    BestIcecream::Scraper.scrape_parlors
     # binding.pry
     list_parlors
     menu
@@ -13,7 +13,7 @@ class BestIcecream::CLI
   end
 
   def list_parlors
-    puts "Welcome to the World's Best Icecream Parlors!"
+    puts "Welcome to the NYC's Best Icecream Parlors!"
     @parlors = BestIcecream::Parlor.all
     @parlors.each.with_index(1) do |parlor, i|
       puts "#{i}. #{parlor.name}" #- #{parlor.location} - #{parlor.phone} - #{parlor.url}"
