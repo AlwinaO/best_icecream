@@ -1,6 +1,6 @@
-# BestIcecream
+# Best Ice Cream Parlors to visit
 
-Welcome to BestIcecream gem! I created this gem to find the best ice cream in your city or around the world. There's a lot of great options for ice cream, some I've been too and others I look forward to checking out!
+Welcome to the BestIcecream gem! I created this gem to find the best ice cream in your city or around the world. There's a lot of great options for ice cream, some I've been too and others I look forward to checking out!
 
 I hope you are looking forward to finding the best ice cream no matter where you are! Yummy!!!
 
@@ -30,6 +30,8 @@ To run the CLI, type in ./bin/best-icecream, which will give you an initial list
 When you are finished reviewing the list, type exit to exit the CLI.
 
 Here's a quick video demo:
+
+![quick-cli-walkthrough](https://user-images.githubusercontent.com/22036904/42597014-6a7103f0-8525-11e8-93d2-a5312fe08a6b.gif)
 
 I hope you got some good ideas for ice cream parlors to check out! :)
 
